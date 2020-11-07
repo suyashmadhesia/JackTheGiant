@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BGScaler : MonoBehaviour {
 
-	// Use this for initialization
+	
 	void Start () {
 
 		SpriteRenderer sr = GetComponent<SpriteRenderer>();

@@ -14,7 +14,6 @@ public class Player : MonoBehaviour {
 		anim = GetComponent<Animator>();
 	}
 	
-	// Update is called once per frame
 	void FixedUpdate () {
 		PlayerMovement();
 		
