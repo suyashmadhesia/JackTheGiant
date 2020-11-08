@@ -27,7 +27,7 @@ public class CloudSpawner : MonoBehaviour {
 		controlX = 0;
 		SetMinAndMaxX();
 		CreateClouds();
-		
+
 	}
 
 	void SetMinAndMaxX(){
@@ -46,7 +46,7 @@ public class CloudSpawner : MonoBehaviour {
 			arrayToShuffle[random] = temp;
 
 
-			
+
 		}
 
 
@@ -64,7 +64,7 @@ public class CloudSpawner : MonoBehaviour {
 
 			temp.y = positionY;
 
-			
+
 
 			if(controlX == 0){
 				temp.x = Random.Range(0.0f, maxX);
@@ -88,7 +88,7 @@ public class CloudSpawner : MonoBehaviour {
 
 			clouds[i].transform.position = temp;
 
-			positionY -= distanceBetweenClouds; 
+			positionY -= distanceBetweenClouds;
 
 		}
 
@@ -105,9 +105,9 @@ public class CloudSpawner : MonoBehaviour {
 				darkClouds[i].transform.position = new Vector3(cloudsInGame[0].transform.position.x,
 																cloudsInGame[0].transform.position.y,
 																cloudsInGame[0].transform.position.z);
-				cloudsInGame[0].transform.position = t;	
+				cloudsInGame[0].transform.position = t;
 			}
-			
+
 		}
 		Vector3 temp = cloudsInGame[0].transform.position;
 			for (int i = 1; i < cloudsInGame.Length; i++){
@@ -121,4 +121,51 @@ public class CloudSpawner : MonoBehaviour {
 			player.transform.position = temp;
 
 	}
+
+	private void OnTriggerEnter2D(Collider2D target) {
+
+		if(target.tag == "Cloud" || target.tag == "Deadly"){
+
+
+			if(target.transform.position.y == lastCloudPositionY){
+				Shuffle(clouds);
+				Shuffle(collectables);
+
+				Vector3 temp = target.transform.position;
+
+				for (int i = 0; i < clouds.Length; i++) {
+					if (!clouds[i].activeInHierarchy) {
+						if(controlX == 0){
+						temp.x = Random.Range(0.0f, maxX);
+						controlX = 1;
+						}else if (controlX == 1)
+						{
+							temp.x = Random.Range(0.0f, minX);
+							controlX = 2;
+						}else if (controlX == 2)
+						{
+							temp.x = Random.Range(1.0f, maxX);
+							controlX = 3;
+						}
+						else if (controlX == 3)
+						{
+							temp.x = Random.Range(-1.0f, minX);
+							controlX = 0;
+						}
+						temp.y -= distanceBetweenClouds;
+
+						lastCloudPositionY = temp.y;
+
+						clouds[i].transform.position = temp;
+						clouds[i].SetActive(true);
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
 }
