@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4573168802423502}
   - component: {fileID: 212282861386145562}
-  - component: {fileID: 60337406641886414}
+  - component: {fileID: 61930083923226912}
   m_Layer: 0
   m_Name: WhiteCloud_1
   m_TagString: Cloud
@@ -41,8 +41,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &60337406641886414
-PolygonCollider2D:
+--- !u!61 &61930083923226912
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -53,7 +53,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.005175978, y: 0.01}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -63,28 +63,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.6868524, y: -0.04125762}
-      - {x: 0.8443741, y: 0.06436825}
-      - {x: 0.67436177, y: 0.13124514}
-      - {x: 0.52687734, y: 0.14186478}
-      - {x: 0.26437414, y: 0.15874219}
-      - {x: 0.049999952, y: 0.15999365}
-      - {x: -0.20687723, y: 0.15874219}
-      - {x: -0.49235153, y: 0.15874219}
-      - {x: -0.5662204, y: 0.14249682}
-      - {x: -0.8443743, y: 0.06999397}
-      - {x: -0.7262329, y: -0.003748417}
-      - {x: -0.75686514, y: -0.009993792}
-      - {x: -0.5256572, y: -0.0670712}
-      - {x: -0.3362453, y: -0.1131165}
-      - {x: -0.17811644, y: -0.19249678}
-      - {x: 0.10178423, y: -0.1660757}
-      - {x: 0.27063203, y: -0.18687105}
-      - {x: 0.46437436, y: -0.12874222}
-      - {x: 0.5918713, y: -0.06561971}
-      - {x: 0.64434963, y: -0.035000086}
+  serializedVersion: 2
+  m_Size: {x: 1.5447202, y: 0.28636608}
+  m_EdgeRadius: 0
 --- !u!212 &212282861386145562
 SpriteRenderer:
   m_ObjectHideFlags: 1
