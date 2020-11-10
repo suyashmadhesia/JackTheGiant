@@ -177,7 +177,8 @@ public class CloudSpawner : MonoBehaviour {
 										collectables[random].transform.position = temp2;
 										collectables[random].SetActive(true);
 									}
-								}else{
+								}
+								else{
 
 									collectables[random].transform.position = temp2;
 									collectables[random].SetActive(true);

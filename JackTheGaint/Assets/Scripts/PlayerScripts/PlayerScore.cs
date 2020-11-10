@@ -42,6 +42,7 @@ void CountScore(){
 			scoreCount++;
 
 		}
+		GameplayController.instance.SetScore(scoreCount);
 		previousPosition = transform.position;
 
 		}
@@ -53,6 +54,9 @@ void CountScore(){
 			coinScore++;
 			scoreCount += 200;
 
+			GameplayController.instance.SetScore(scoreCount);
+			GameplayController.instance.SetCoinScore(coinScore);
+
 			AudioSource.PlayClipAtPoint(coinClip, transform.position);
 			target.gameObject.SetActive(false);
 		}
@@ -60,6 +64,9 @@ void CountScore(){
 		if(target.tag == "Life"){
 			lifeScore++;
 			scoreCount += 300;
+
+			GameplayController.instance.SetScore(scoreCount);
+			GameplayController.instance.SetLifeScore(lifeScore);
 
 			AudioSource.PlayClipAtPoint(lifeClip, transform.position);
 			target.gameObject.SetActive(false);

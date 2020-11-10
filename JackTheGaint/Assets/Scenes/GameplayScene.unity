@@ -338,11 +338,6 @@ Prefab:
       propertyPath: m_Name
       value: Coin (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 212233408118468220, guid: 9e321524598194ab78a245110fb13abd,
-        type: 2}
-      propertyPath: m_SortingOrder
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9e321524598194ab78a245110fb13abd, type: 2}
   m_IsPrefabParent: 0
@@ -596,7 +591,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: b49e4e18434f740c8a7ede6dba0a12e8, type: 3}
-    m_FontSize: 26
+    m_FontSize: 36
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -607,7 +602,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: 0
 --- !u!222 &342108153
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -895,7 +890,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: x2
+  m_Text: x0
 --- !u!222 &437722285
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1148,7 +1143,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4402254564456300, guid: 2b58031f229964ea89221d97a7111273, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 212724586618899574, guid: 2b58031f229964ea89221d97a7111273,
         type: 2}
@@ -1557,16 +1552,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4402254564456300, guid: 2b58031f229964ea89221d97a7111273, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1761992458965286, guid: 2b58031f229964ea89221d97a7111273, type: 2}
       propertyPath: m_Name
       value: Life (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 212724586618899574, guid: 2b58031f229964ea89221d97a7111273,
-        type: 2}
-      propertyPath: m_SortingOrder
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b58031f229964ea89221d97a7111273, type: 2}
@@ -1655,7 +1645,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1127212174}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1340546664}
+        m_MethodName: PauseTheGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1127212174
@@ -1983,6 +1984,50 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &1340546663
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1340546665}
+  - component: {fileID: 1340546664}
+  m_Layer: 0
+  m_Name: Gameplay Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1340546664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1340546663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a48e90a26044e48e4a195f39aa3f7274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinText: {fileID: 2077487490}
+  lifeText: {fileID: 437722284}
+  scoreText: {fileID: 342108152}
+  pausePanel: {fileID: 18540031}
+--- !u!4 &1340546665
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1340546663}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1421111436
 GameObject:
   m_ObjectHideFlags: 0
@@ -2045,24 +2090,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1426483915 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1664626314717764, guid: 4280b41724910446ca6331c51058b9fe,
-    type: 2}
-  m_PrefabInternal: {fileID: 1302254132}
---- !u!114 &1426483916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1426483915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d03f208a972704acdbf5a3a956f0e368, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinClip: {fileID: 8300000, guid: 30e71e51249f141d0bd42581661b4ec0, type: 3}
-  lifeClip: {fileID: 8300000, guid: bdd3fa2341f6c43529e26ce643ce3d86, type: 3}
 --- !u!1 &1440495231
 GameObject:
   m_ObjectHideFlags: 0
@@ -2294,7 +2321,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1595726985}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1340546664}
+        m_MethodName: quitTheGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1595726985
@@ -2513,7 +2551,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1651525701}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1340546664}
+        m_MethodName: ResumeTheGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1651525701
@@ -3146,7 +3195,7 @@ GameObject:
   - component: {fileID: 2077487491}
   - component: {fileID: 2077487490}
   m_Layer: 5
-  m_Name: CoinText
+  m_Name: Coin Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3202,7 +3251,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: 0
 --- !u!222 &2077487491
 CanvasRenderer:
   m_ObjectHideFlags: 0
