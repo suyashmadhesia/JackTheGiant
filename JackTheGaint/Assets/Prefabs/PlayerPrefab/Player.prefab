@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 61495323156025028}
   - component: {fileID: 114337010164641774}
   - component: {fileID: 114350305482077944}
+  - component: {fileID: 114693410131455580}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -57,7 +58,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 0.1
-  m_LinearDrag: 4
+  m_LinearDrag: 5
   m_AngularDrag: 0.05
   m_GravityScale: 5
   m_Material: {fileID: 0}
@@ -131,6 +132,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5bf457492b8431babc66a2b497beb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114693410131455580
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1664626314717764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d03f208a972704acdbf5a3a956f0e368, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinClip: {fileID: 8300000, guid: 30e71e51249f141d0bd42581661b4ec0, type: 3}
+  lifeClip: {fileID: 8300000, guid: bdd3fa2341f6c43529e26ce643ce3d86, type: 3}
 --- !u!212 &212364555436905662
 SpriteRenderer:
   m_ObjectHideFlags: 1
