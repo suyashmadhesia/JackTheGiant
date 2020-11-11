@@ -82,6 +82,8 @@ void CountScore(){
 			transform.position = new Vector3(500,500,0);
 			lifeScore--;
 
+			GameplayController.instance.GameoverShowPanel(scoreCount, coinScore);
+
 		}
 
 		if(target.tag == "Deadly"){
@@ -90,6 +92,8 @@ void CountScore(){
 
 			transform.position = new Vector3(500,500,0);
 			lifeScore--;
+
+			GameplayController.instance.GameoverShowPanel(scoreCount, coinScore);
 
 		}
 
