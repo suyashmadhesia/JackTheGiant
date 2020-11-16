@@ -28,6 +28,15 @@ public class GameplayController : MonoBehaviour {
 
 	}
 
+	IEnumerator PlayerDiedRestart() {
+		yield return new WaitForSeconds(1f);
+		SceneManager.LoadScene("GameplayScene");
+	}
+
+	public void PlayerDiedRestartTheGame(){
+		StartCoroutine(PlayerDiedRestart());
+	}
+
 	public void GameoverShowPanel(int finalScore, int finalCoin){
 
 		gameoverPanel.SetActive(true);
@@ -44,16 +53,18 @@ public class GameplayController : MonoBehaviour {
 
 	}
 
+
+
 	public void SetScore(int score) {
-		scoreText.text = "" + score;
+		scoreText.text = "x" + score.ToString();
 	}
 
 	public void SetCoinScore(int coin){
 		coinText.text = "x" + coin;
 	}
 
-	public void SetLifeScore(int score){
-		lifeText.text = "x" + score;
+	public void SetLifeScore(int lifescore){
+		lifeText.text = "x" + lifescore;
 	}
 
 	public void PauseTheGame() {
@@ -74,9 +85,6 @@ public class GameplayController : MonoBehaviour {
 
 		Time.timeScale = 1f;
 		SceneManager.LoadScene("MainMenu");
-		// PlayerScore.scoreCount = 0;
-		// PlayerScore.lifeScore = 0;
-		// PlayerScore.coinScore = 0;
 
 	}
 }

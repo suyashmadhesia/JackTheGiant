@@ -10,6 +10,7 @@ public class MainMenuController : MonoBehaviour {
 	}
 
 	public void StartGame(){
+		Gamemanger.instance.gameStartedFromMainMenu = true;
 		SceneManager.LoadScene("GameplayScene");
 	}
 
@@ -26,7 +27,7 @@ public class MainMenuController : MonoBehaviour {
 	}
 
 	public void MusicButton(){
-		
+
 	}
 
 }

@@ -19,11 +19,13 @@ public class PlayerScore : MonoBehaviour {
 
 	void Awake(){
 		cameraScript = Camera.main.GetComponent<CameraScript> ();
+
 	}
 
 	void Start () {
 		previousPosition = transform.position;
 		countScore = true;
+
 
 	}
 
@@ -62,13 +64,15 @@ void CountScore(){
 		}
 
 		if(target.tag == "Life"){
-			lifeScore++;
-			scoreCount += 300;
 
-			GameplayController.instance.SetScore(scoreCount);
-			GameplayController.instance.SetLifeScore(lifeScore);
+				lifeScore++;
+				scoreCount += 300;
 
-			AudioSource.PlayClipAtPoint(lifeClip, transform.position);
+				GameplayController.instance.SetScore(scoreCount);
+				GameplayController.instance.SetLifeScore(lifeScore);
+
+				AudioSource.PlayClipAtPoint(lifeClip, transform.position);
+
 			target.gameObject.SetActive(false);
 		}
 
@@ -82,7 +86,7 @@ void CountScore(){
 			transform.position = new Vector3(500,500,0);
 			lifeScore--;
 
-			GameplayController.instance.GameoverShowPanel(scoreCount, coinScore);
+			Gamemanger.instance.CheckGameStatus(scoreCount, coinScore, lifeScore);
 
 		}
 
@@ -93,7 +97,7 @@ void CountScore(){
 			transform.position = new Vector3(500,500,0);
 			lifeScore--;
 
-			GameplayController.instance.GameoverShowPanel(scoreCount, coinScore);
+			Gamemanger.instance.CheckGameStatus(scoreCount, coinScore, lifeScore);
 
 		}
 
