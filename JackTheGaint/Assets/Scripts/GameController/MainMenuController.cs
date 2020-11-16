@@ -2,12 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour {
+
+	[SerializeField]
+	private Button musicButton;
+
+	[SerializeField]
+	private Sprite[] musicIcon;
 
 	void Start () {
 
 	}
+
+
 
 	public void StartGame(){
 		Gamemanger.instance.gameStartedFromMainMenu = true;

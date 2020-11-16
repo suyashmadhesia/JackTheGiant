@@ -256,6 +256,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebd05fabd57f24d14a62ab99638a2a49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 856113619}
+  coinText: {fileID: 2048433709}
 --- !u!4 &232897282
 Transform:
   m_ObjectHideFlags: 0
