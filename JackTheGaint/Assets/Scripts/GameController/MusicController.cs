@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MusicController : MonoBehaviour {
 
-	public AudioSource audioSource;
+	private AudioSource audioSource;
 
 	public static MusicController instance;
 
@@ -13,7 +13,7 @@ public class MusicController : MonoBehaviour {
 		audioSource = GetComponent<AudioSource> ();
 	}
 
-	// Update is called once per frame
+
 	void MakeSingleton () {
 		if(instance != null){
 			Destroy(gameObject);
